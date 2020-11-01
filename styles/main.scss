@@ -1,4 +1,6 @@
-@use '../../../../src/.vizality/lib/sass' as *;
+@use '../../../../src/.vizality/lib/sass/functions' as *;
+@use '../../../../src/.vizality/lib/sass/mixins' as *;
+
 @use 'themes';
 
 .vz-code-block {
