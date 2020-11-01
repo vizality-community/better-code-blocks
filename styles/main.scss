@@ -1,0 +1,91 @@
+@use '../../../../src/.vizality/lib/sass' as *;
+@use 'themes';
+
+.vz-code-block {
+  $block: &;
+  &-wrapper {
+    #{$block}-pre {
+      max-width: 100%;
+    }
+  }
+  &-header {
+    color: var('text-normal');
+    background: color('black', .1);
+    border-bottom: 1px solid var('background-tertiary');
+    line-height: 20px;
+    padding: 0 10px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: initial;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: initial;
+  }
+  &-line-numbers {
+    @include size(30px, 100%);
+    color: var('interactive-muted');
+    text-align: right;
+    line-height: 1.125rem;
+    font-weight: initial;
+    font-style: initial;
+    &::after {
+      $numbers: '';
+      @for $i from 1 through 999 {
+        $numbers: $numbers + $i + '\A '
+      }
+      content: $numbers;
+      overflow: hidden;
+      position: absolute;
+      padding-right: 6px;
+      left: -3px;
+      top: .5em;
+      bottom: .5em;
+      border-right: 1px solid color('black', .2);
+    }
+  }
+  /*
+   * Small bottom and right distance is to take into account
+   * single line generic code blocks that have no header.
+   */
+  &-copy-button {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    // 100% - bottom * 2 for single-line code blocks without headers
+    max-height: calc(100% - 10px);
+    min-height: 0;
+    opacity: 0;
+    transition: opacity .17s, background-color .17s ease, color .17s ease;
+    &.vz-is-copied {
+      opacity: 1;
+    }
+  }
+  &-code {
+    &.vz-has-line-numbers,
+    &.vz-has-header,
+    &.vz-has-copy-button {
+      overflow: hidden;
+      position: relative;
+    }
+    &.vz-has-line-numbers {
+      padding-left: calc(35px + .5em);
+    }
+    &.vz-has-header {
+      padding-top: calc(20px + .5em);
+      #{$block}-line-numbers {
+        &::after {
+          top: calc(20px + .5em);
+        }
+      }
+    }
+    &:hover {
+      #{$block}-copy-button {
+        opacity: 1;
+      }
+    }
+  }
+}

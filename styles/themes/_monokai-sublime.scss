@@ -1,0 +1,66 @@
+.vz-code-block {
+  &#{&}--theme-monokai-sublime {
+    .hljs {
+      &,
+      &-subst,
+      &-tag {
+        color: #f8f8f2;
+      }
+      &-emphasis,
+      &-strong {
+        color: #a8a8a2;
+      }
+      &-bullet,
+      &-link,
+      &-literal,
+      &-number,
+      &-quote,
+      &-regexp {
+        color: #ae81ff;
+      }
+      &-code,
+      &-section,
+      &-selector-class,
+      &-title {
+        color: #a6e22e;
+      }
+      &-strong {
+        font-weight: 700;
+      }
+      &-emphasis {
+        font-style: italic;
+      }
+      &-attr,
+      &-keyword,
+      &-name,
+      &-selector-tag {
+        color: #f92672;
+      }
+      &-attribute,
+      &-symbol {
+        color: #66d9ef;
+      }
+      &-class &-title,
+      &-params {
+        color: #f8f8f2;
+      }
+      &-addition,
+      &-built_in,
+      &-builtin-name,
+      &-selector-attr,
+      &-selector-id,
+      &-selector-pseudo,
+      &-string,
+      &-template-variable,
+      &-type,
+      &-variable {
+        color: #e6db74;
+      }
+      &-comment,
+      &-deletion,
+      &-meta {
+        color: #75715e;
+      }
+    }
+  }
+}

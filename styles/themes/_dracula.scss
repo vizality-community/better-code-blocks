@@ -1,0 +1,73 @@
+.vz-code-block {
+  &--theme-dracula {
+    .hljs {
+      &,
+      &-subst {
+        color: #f8f8f2;
+      }
+      &-built_in,
+      &-selector-id,
+      &-attribute,
+      &-link,
+      &-meta-string,
+      &-doctag {
+        color: #8be9fd;
+      }
+      &-keyword,
+      &-selector-tag,
+      &-subst,
+      &-meta {
+        color: #ff79c6;
+      }
+      &-title,
+      &-selector-pseudo,
+      &-selector-class {
+        color: #50fa7b;
+      }
+      &-params,
+      &-strong {
+        font-style: italic;
+        color: #ffb86c;
+      }
+      &-string,
+      &-name,
+      &-type,
+      &-attr,
+      &-emphasis,
+      &-symbol,
+      &-regexp,
+      &-bullet,
+      &-addition,
+      &-variable,
+      &-selector-attr,
+      &-template-tag,
+      &-template-variable {
+        color: #f1fa8c;
+      }
+      &-comment,
+      &-quote,
+      &-deletion {
+        color: #6272a4;
+      }
+      &-keyword,
+      &-selector-tag,
+      &-literal,
+      &-title,
+      &-section,
+      &-doctag,
+      &-type,
+      &-name,
+      &-strong {
+        font-weight: 700;
+      }
+      &-literal,
+      &-number,
+      &-section {
+        color: #bd93f9;
+      }
+      &-emphasis {
+        font-style: italic;
+      }
+    }
+  }
+}
