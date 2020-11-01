@@ -19,12 +19,12 @@ module.exports = class CodeBlocks extends Plugin {
 
   patchCodeBlocks () {
     const parser = getModule('parse', 'parseTopic');
-    patch('vz-code-blocks-inline', parser.defaultRules.codeBlock, 'react', (args, res) => {
+    patch('better-code-blocks-inline', parser.defaultRules.codeBlock, 'react', (args, res) => {
       this.injectCodeBlock(args, res);
       return res;
     });
 
-    patch('vz-code-blocks-embed', parser, 'parseAllowLinks', (_, res) => {
+    patch('better-code-blocks-embed', parser, 'parseAllowLinks', (_, res) => {
       for (const children of res) {
         const codeblock = findInReactTree(children, n => n.type && n.type.name === '');
         if (codeblock) {
