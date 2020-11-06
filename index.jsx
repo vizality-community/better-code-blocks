@@ -1,13 +1,13 @@
-const { react: { findInReactTree, getReactInstance } } = require('@util');
-const { patch, unpatch } = require('@patcher');
-const { CodeBlock } = require('@components');
-const { getModule } = require('@webpack');
-const { Plugin } = require('@entities');
-const { React } = require('@react');
+const { react: { findInReactTree, getReactInstance } } = require('@vizality/util');
+const { patch, unpatch } = require('@vizality/patcher');
+const { CodeBlock } = require('@vizality/components');
+const { getModule } = require('@vizality/webpack');
+const { Plugin } = require('@vizality/entities');
+const { React } = require('@vizality/react');
 
 module.exports = class CodeBlocks extends Plugin {
   onStart () {
-    this.injectStyles('styles/main.css');
+    this.injectStyles('styles/main.scss');
     this.patchCodeBlocks();
   }
 

@@ -4,5 +4,7 @@
   "author": "dperolio",
   "authorId": "97549189629636608",
   "description": "Extends the functionality of Discord code blocks, giving you options to show a copy button, language header, line numbers, and different syntax highlighting themes.",
+  "icon": "assets/icon.png",
+  "color": "#435ae7",
   "license": "MIT"
 }

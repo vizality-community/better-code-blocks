@@ -1,5 +1,5 @@
-@use '../../../../src/.vizality/lib/sass/functions' as *;
-@use '../../../../src/.vizality/lib/sass/mixins' as *;
+@use '@vizality/sass/functions' as *;
+@use '@vizality/sass/mixins' as *;
 
 @use 'themes';
 
@@ -61,6 +61,9 @@
     max-height: calc(100% - 10px);
     min-height: 0;
     opacity: 0;
+    color: var('header-primary');
+    background: var('background-floating');
+    box-shadow: var('elevation-medium');
     transition: opacity .17s, background-color .17s ease, color .17s ease;
     &.vz-is-copied {
       opacity: 1;
