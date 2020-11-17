@@ -43,16 +43,15 @@ module.exports = class CodeBlocks extends Plugin {
       let lang, content, contentIsRaw, res;
       if (!args) {
         res = render(codeblock);
-        lang = res?.props?.children?.props?.className.split(' ').find(className => !className.includes('-') && className !== 'hljs');
-        if (res?.props?.children?.props?.children) {
-          content = res?.props?.children?.props?.children;
+        lang = res.props.children.props.className.split(' ').find(className => !className.includes('-') && className !== 'hljs');
+        if (res.props.children.props.children) {
+          content = res.props.children.props.children;
         } else {
-          content = res?.props?.children?.props?.dangerouslySetInnerHTML?.__html;
+          content = res.props.children.props.dangerouslySetInnerHTML.__html;
           contentIsRaw = true;
         }
       } else {
-        lang = args[0]?.lang;
-        content = args[0]?.content;
+        [ { lang, content } ] = args;
       }
 
       res =
