@@ -23,5 +23,3 @@ Add the following settings options:
 
 - [ ] Include icons in language header
 - [ ] Implement and add more syntax highlighting themes
-
-Testing
