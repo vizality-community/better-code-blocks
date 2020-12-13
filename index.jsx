@@ -7,7 +7,6 @@ const { React } = require('@vizality/react');
 
 module.exports = class CodeBlocks extends Plugin {
   onStart () {
-    this.injectStyles('styles/main.scss');
     this.patchCodeBlocks();
   }
 
