@@ -4,9 +4,9 @@ import { findInReactTree, getReactInstance } from '@vizality/util/react';
 import { patch, unpatch } from '@vizality/patcher';
 import { CodeBlock } from '@vizality/components';
 import { getModule } from '@vizality/webpack';
-import { Plugin } from '@vizality/core';
+import { Plugin } from '@vizality/entities';
 
-export default class CodeBlocks extends Plugin {
+export default class BetterCodeBlocks extends Plugin {
   onStart () {
     this.patchCodeBlocks();
   }
