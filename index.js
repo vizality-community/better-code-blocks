@@ -26,7 +26,7 @@ export default class BetterCodeBlocks extends Plugin {
 
     patch('better-code-blocks-embed', parser, 'parseAllowLinks', (_, res) => {
       for (const children of res) {
-        const codeblock = findInReactTree(children, n => n.type?.name === '');
+        const codeblock = findInReactTree(children, n => n?.type?.name === '');
         if (codeblock) {
           this.injectCodeBlock(null, codeblock);
         }
@@ -67,6 +67,10 @@ export default class BetterCodeBlocks extends Plugin {
   }
 
   _forceUpdate () {
-    document.querySelectorAll(`[id^='chat-messages-']`).forEach(e => getReactInstance(e).memoizedProps.onMouseMove());
+    /*
+     * @todo Make this better.
+     * @note Some messages don't have onMouseMove, so check for that first.
+     */
+    document.querySelectorAll(`[id^='chat-messages-']`).forEach(e => getReactInstance(e)?.memoizedProps?.onMouseMove && getReactInstance(e)?.memoizedProps?.onMouseMove());
   }
 }
